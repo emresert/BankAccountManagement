@@ -9,6 +9,10 @@ namespace CoreWebAPI.Models
 {
     public class Bank
     {
-      
+        [Key]
+        public int BankID { get; set; }
+
+        [Column(TypeName = "NVARCHAR(100)")]
+        public string BankName { get; set; }
     }
 }
