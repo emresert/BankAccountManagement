@@ -1,0 +1,14 @@
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\bin\Debug\netcoreapp2.2\CoreWebAPI.deps.json
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\bin\Debug\netcoreapp2.2\CoreWebAPI.runtimeconfig.json
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\bin\Debug\netcoreapp2.2\CoreWebAPI.runtimeconfig.dev.json
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\bin\Debug\netcoreapp2.2\CoreWebAPI.dll
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\bin\Debug\netcoreapp2.2\CoreWebAPI.pdb
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.csprojAssemblyReference.cache
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.RazorAssemblyInfo.cache
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.RazorAssemblyInfo.cs
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.AssemblyInfoInputs.cache
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.AssemblyInfo.cs
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.dll
+C:\Users\Emre Sert\Desktop\Angular8-AspCore\BankAccountManagement\CoreWebAPI\CoreWebAPI\obj\Debug\netcoreapp2.2\CoreWebAPI.pdb
