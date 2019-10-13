@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreWebAPI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -25,6 +27,12 @@ namespace CoreWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // ------> we added our Apı context as manual  // bu satırı manuel olarak eklememiz gerekir
+            // -----> appsettings.json dosyasındaki alowed hostun altın connection string kısmını elimizle oluşturduk. 
+            // ---->  ve devconnetionu buraya ekledik.
+            //-----> arkasından consola Add-Migration "InitialDB" ve Updata-Database komutu yazılarak migration klasörü oluşturulur.
+            services.AddDbContext<APIDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection"))); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
