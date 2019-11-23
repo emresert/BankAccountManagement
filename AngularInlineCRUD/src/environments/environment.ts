@@ -2,8 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+/* Manuel olarak apiBase urı tanımlamız gerekir*/
 export const environment = {
-  production: false
+  production: false,
+  apiBaseURI:'http://localhost:50049/api'
 };
 
 /*

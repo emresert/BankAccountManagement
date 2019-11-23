@@ -43,6 +43,22 @@ namespace CoreWebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            
+
+            // Nuget package managerden ASP.NETCORE.CORS Uygulamasını ekledik. Çünkü .NET CORE ve Angular farklı localhost
+            // adresi kullandığı için bu configurasyonu yaptık. Ayrıca bi alt satırdaki kodlarda http optionsları api mize ulaşmak için
+            // yazdık ve status kod döndürdük. Kendi localhost adresini yazmayı unutma.
+            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+
+            app.Use(async (ctx, next) => {
+                await next();
+                if (ctx.Response.StatusCode == 204)
+                {
+                    ctx.Response.ContentLength = 0;
+                }
+            });
+
+
             app.UseMvc();
         }
     }
