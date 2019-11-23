@@ -1,0 +1,36 @@
+<blockquote class="blockquote ml-5">
+  <h2>Bank Accounts Management System</h2>
+  <footer class="blockquote-footer">
+    Using  inline table editing with <i>Angular 8 </i>and <i>ASP.NET Core</i>
+  </footer>
+</blockquote>
+<div class="grid-table">
+  <div class="thead">
+    <div class="tr">
+      <div class="td"> Account Number :</div>
+      <div class="td"> Account Holder Name :</div>
+      <div class="td"> Bank :</div>
+      <div class="td"> FSC :</div>
+      <div class="td"> Balance :</div>
+    </div>
+  </div>
+  <div class="tbody">
+    <form class="tr" [formGroup]="fg" *ngFor="let fg of bankAccountForms.controls">
+      <div class="td">
+        <input class="form-control"formControlName="AccountNumber">
+      </div>
+      <div class="td">
+        <input class="form-control"formControlName="AccountHolder">
+      </div>
+      <div class="td">
+        <input class="form-control"formControlName="BankID">
+      </div>
+      <div class="td">
+        <input class="form-control"formControlName="FSC">
+      </div>
+      <div class="td">
+        <input class="form-control"formControlName="Balance">
+      </div>
+    </form>
+  </div>
+</div>
