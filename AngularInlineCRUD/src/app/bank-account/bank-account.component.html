@@ -12,6 +12,7 @@
       <div class="td"> Bank :</div>
       <div class="td"> FSC :</div>
       <div class="td"> Balance :</div>
+      <div class="td">Actions:</div>
     </div>
   </div>
   <div class="tbody">
@@ -24,6 +25,7 @@
       </div>
       <div class="td">
         <select class="form-control"formControlName="BankID">
+          <option value="0">Choose a Bank</option>
         <option *ngFor ="let item of  bankList" value="{{item.bankID}}">{{item.bankName}}</option>
         </select>
         </div>
@@ -32,6 +34,10 @@
       </div>
       <div class="td">
         <input class="form-control"formControlName="Balance">
+      </div>
+      <div class="td">  
+        <button type="submit" class="btn btn-success"
+        [disabled]="fg.invalid">Submit</button>
       </div>
     </form>
   </div>
