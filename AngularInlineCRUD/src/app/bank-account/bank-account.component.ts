@@ -19,7 +19,25 @@ export class BankAccountComponent implements OnInit {
   ngOnInit() {
     /*Diziye verileri aktarmak için önce get metodunu çalıştırdıl */
     this.bankService.getBankList().subscribe(res =>this.bankList=res as [] );
-    this.addBankAccountForm();
+    
+    this.service.getBankAccountList().subscribe(
+    res =>{
+      if(res == [])
+      this.addBankAccountForm();
+      else{
+        (res as []).forEach((bankAccount:any)=>{
+          this.bankAccountForms.push(this.fb.group({
+            BankAccountID:[bankAccount.bankAccountID],
+            AccountNumber:[bankAccount.accountNumber,Validators.required],
+            AccountHolder:[bankAccount.accountHolder,Validators.required],
+            BankID:[bankAccount.bankID,Validators.min(1)],
+            FSC:[bankAccount.fsc,Validators.required],
+            Balance:[bankAccount.balance,Validators.required],
+          }));
+        });
+      }
+      }
+    );
   }
   /* dropdown için push metodu */
   addBankAccountForm(){
@@ -30,12 +48,15 @@ export class BankAccountComponent implements OnInit {
       BankID:[0,Validators.min(1)],
       FSC:['',Validators.required],
       Balance:['',Validators.required],
-
     }));
   }
+  /* Formdan gelen verilere göre bankaccount 'a insert etme metodu */
   recordSubmit(fg:FormGroup){
       this.service.postBankAccount(fg.value).subscribe(
-        (res:any)=>{}
+        (res:any)=>{
+          fg.patchValue({ BankAccountID:res.BankAccountID});
+
+        }
       )
   }
 }
