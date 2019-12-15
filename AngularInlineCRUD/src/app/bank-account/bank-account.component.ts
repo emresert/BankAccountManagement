@@ -52,11 +52,20 @@ export class BankAccountComponent implements OnInit {
   }
   /* Formdan gelen verilere göre bankaccount 'a insert etme metodu */
   recordSubmit(fg:FormGroup){
+    if(fg.value.bankAccountID==0)
       this.service.postBankAccount(fg.value).subscribe(
         (res:any)=>{
           fg.patchValue({ BankAccountID:res.BankAccountID});
-
-        }
-      )
+        });
+        else
+          this.service.putBankAccount(fg.value).subscribe(
+            (res:any)=>{});
+  }
+  onDelete(bankAccountID,i){
+    this.service.deleteBankAccount(bankAccountID).subscribe(
+      res=>{
+        this.bankAccountForms.removeAt(i);
+      }
+    );
   }
 }
