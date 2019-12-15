@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 /* Manuel eklenenler */
-import { FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormArray, Validators, FormGroup } from '@angular/forms';
 import { BankService } from '../shared/bank.service';
+import { BankAccountService } from '../shared/bank-account.service';
+
 
 @Component({
   selector: 'app-bank-account',
@@ -12,7 +14,7 @@ export class BankAccountComponent implements OnInit {
 
   bankAccountForms  : FormArray =this.fb.array([]);
   bankList = [];
-  constructor(private fb:FormBuilder,private bankService:BankService) { }
+  constructor(private fb:FormBuilder,private bankService:BankService,private service :BankAccountService) { }
 
   ngOnInit() {
     /*Diziye verileri aktarmak için önce get metodunu çalıştırdıl */
@@ -30,5 +32,10 @@ export class BankAccountComponent implements OnInit {
       Balance:['',Validators.required],
 
     }));
+  }
+  recordSubmit(fg:FormGroup){
+      this.service.postBankAccount(fg.value).subscribe(
+        (res:any)=>{}
+      )
   }
 }
