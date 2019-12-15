@@ -17,6 +17,12 @@
           <i class="fa fa-plus"></i> New Record
         </button>
       </div>
+      <div class="td">
+        <span *ngIf="notification" class="elementToFadeInAndOut">
+            <i class="fas fa-check-circle {{notification.class}}"></i>
+            {{notification.message}}
+        </span>
+    </div>
     </div>
   </div>
   <div class="tbody">

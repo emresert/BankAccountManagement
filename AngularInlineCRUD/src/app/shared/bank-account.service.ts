@@ -13,11 +13,12 @@ export class BankAccountService {
    return this.http.post(environment.apiBaseURI+'/BankAccount',formData)
  }
 
- putBankAccount(formData){
-  return this.http.put(environment.apiBaseURI+'/BankAccount/'+formData.BankAccountID,formData)
+ putBankAccount(formData) {
+  
+  return this.http.put(environment.apiBaseURI + '/BankAccount/' + formData.bankAccountID, formData);
 }
-deleteBankAccount(id){
-  return this.http.delete(environment.apiBaseURI+'/BankAccount/'+id)
+deleteBankAccount(id) {
+  return this.http.delete(environment.apiBaseURI + '/BankAccount/' + id);
 }
  getBankAccountList(){
   return this.http.get(environment.apiBaseURI+'/BankAccount')

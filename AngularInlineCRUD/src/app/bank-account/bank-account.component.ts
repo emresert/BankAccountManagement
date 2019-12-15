@@ -14,6 +14,7 @@ export class BankAccountComponent implements OnInit {
 
   bankAccountForms  : FormArray =this.fb.array([]);
   bankList = [];
+  notification = null;
   constructor(private fb:FormBuilder,private bankService:BankService,private service :BankAccountService) { }
 
   ngOnInit() {
@@ -52,20 +53,46 @@ export class BankAccountComponent implements OnInit {
   }
   /* Formdan gelen verilere göre bankaccount 'a insert etme metodu */
   recordSubmit(fg:FormGroup){
-    if(fg.value.bankAccountID==0)
+    if(fg.value.BankAccountID==0)
       this.service.postBankAccount(fg.value).subscribe(
         (res:any)=>{
           fg.patchValue({ BankAccountID:res.BankAccountID});
+          this.showNotification('insert');
         });
         else
           this.service.putBankAccount(fg.value).subscribe(
-            (res:any)=>{});
+            (res:any)=>{
+              this.showNotification('update');
+            });
   }
   onDelete(bankAccountID,i){
+    if (bankAccountID == 0)
+    this.bankAccountForms.removeAt(i);
+  else if (confirm('Are you sure to delete this record ?'))
     this.service.deleteBankAccount(bankAccountID).subscribe(
-      res=>{
+      res => {
         this.bankAccountForms.removeAt(i);
-      }
-    );
+          this.showNotification('insert');
+      });
+  }
+
+  showNotification(category) {
+    switch (category) {
+      case 'insert':
+        this.notification = { class: 'text-success', message: 'saved!' };
+        break;
+      case 'update':
+        this.notification = { class: 'text-primary', message: 'updated!' };
+        break;
+      case 'delete':
+        this.notification = { class: 'text-danger', message: 'deleted!' };
+        break;
+
+      default:
+        break;
+    }
+    setTimeout(() => {
+      this.notification = null;
+    }, 3000);
   }
 }
